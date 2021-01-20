@@ -1,12 +1,6 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.time.ZoneId;
-import java.util.Date;
-
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 import tallerpruebas.Employee;
@@ -16,24 +10,24 @@ class EmployeeTest {
 	
 	/*
 	 * 1. Calcula el salario de un Employee Worker cuando la moneda 
-	 * es USD y el mes es par
+	 * es USD y el mes es par. *Probado con mes sistema Febrero
 	 */
 	 @Test
 	 public void csWorkerUSDParTest() {
-		 Employee e1 = new Employee(100f, "USD", 1f, EmployeeType.Worker);
-		 float salarioactual = e1.cs();
+		 Employee e = new Employee(100f, "USD", 1f, EmployeeType.Worker);
+		 float salarioactual = e.cs();
 		 float salarioEsperado = 164.33334350585938f;
 		 assertEquals(salarioactual, salarioEsperado, 0.1);
 	 }
 	 
 	 /*
 	 * 2. Calcula el salario de un Employee Manager cuando la moneda 
-	 * es USD y el mes es par
+	 * es USD y el mes es par. *Probado con mes sistema Febrero
 	 */
 	 @Test
 	 public void csManagerUSDParTest() {
-		 Employee e2 = new Employee(100f, "USD", 1f, EmployeeType.Manager);
-		 float salarioactual = e2.cs();
+		 Employee e = new Employee(100f, "USD", 1f, EmployeeType.Manager);
+		 float salarioactual = e.cs();
 		 float salarioEsperado = 165.033325f;
 		 assertEquals(salarioactual, salarioEsperado, 0.1);
 	 }
@@ -41,12 +35,12 @@ class EmployeeTest {
 	 
 	 /*
 	 * 3. Calcula el salario de un Employee Supevisor cuando la moneda 
-	 * es USD y el mes es par
+	 * es USD y el mes es par. *Probado con mes sistema Febrero
 	 */
 	 @Test
 	 public void csSupervisorUSDParTest() {
-		 Employee e3 = new Employee(100f, "USD", 1f, EmployeeType.Supervisor);
-		 float salarioactual = e3.cs();
+		 Employee e = new Employee(100f, "USD", 1f, EmployeeType.Supervisor);
+		 float salarioactual = e.cs();
 		 float salarioEsperado = 164.6833f;
 		 assertEquals(salarioactual, salarioEsperado, 0.1);
 		 
@@ -55,12 +49,12 @@ class EmployeeTest {
 	 
 	 /*
 	 * 4. Calcula el salario de un Employee Worker cuando la moneda 
-	 * NO es USD y el mes es par
+	 * NO es USD y el mes es par. *Probado con mes sistema Febrero
 	 */
 	 @Test
 	 public void csWorkerEURParTest() {
-		 Employee e4 = new Employee(100f, "EUR", 1f, EmployeeType.Worker);
-		 float salarioactual = e4.cs();
+		 Employee e = new Employee(100f, "EUR", 1f, EmployeeType.Worker);
+		 float salarioactual = e.cs();
 		 float salarioEsperado = 159.33334350f;
 		 assertEquals(salarioactual, salarioEsperado, 0.1);
 		 
@@ -69,12 +63,12 @@ class EmployeeTest {
 	 
 	 /*
 	 * 5. Calcula el salario de un Employee Worker cuando la moneda 
-	 * NO es USD y el mes es impar
+	 * NO es USD y el mes es impar. *Probado con mes sistema Enero
 	 */
 	 @Test
 	 public void csWorkerEURImparTest() {
-		 Employee e5 = new Employee(100f, "EUR", 1f, EmployeeType.Worker);
-		 float salarioactual = e5.cs();
+		 Employee e = new Employee(100f, "EUR", 1f, EmployeeType.Worker);
+		 float salarioactual = e.cs();
 		 float salarioEsperado = 159.33334350f;
 		 assertEquals(salarioactual, salarioEsperado, 0.1);
 		 
@@ -83,66 +77,67 @@ class EmployeeTest {
 	 
 	 /*
 	 * 6. Calcula el bono de fin de anio de un Employee Worker 
-	 * cuando la moneda es USD
+	 * cuando la moneda es USD.
 	 */
 	 @Test
 	 public void CalculateYearBonusWorkerUSDTest() {
-		 Employee  e7 = new Employee(100f, "USD", 1f, EmployeeType.Worker);
-		 float bonoActual = e7.CalculateYearBonus();
+		 Employee  e = new Employee(100f, "USD", 1f, EmployeeType.Worker);
+		 float bonoActual = e.CalculateYearBonus();
 		 float bonoEsperado = 386.0f;
-		 assertEquals(bonoEsperado,bonoActual);
+		 assertEquals(bonoActual, bonoEsperado, 0.1);
 		 
 
 	 }
 	 
 	 /*
-	 * 7. Calcula el bono de fin de año de un Employee Manager 
-	 * cuando la moneda es USD
+	 * 7. Calcula el bono de fin de anio de un Employee Manager 
+	 * cuando la moneda es USD.
 	 */
 	 @Test
 	 public void CalculateYearBonusManagerUSDTest() {
-		Employee  e1 = new Employee(100f, "USD", 1f, EmployeeType.Manager);
-		float bonoActual = e1.CalculateYearBonus();
-		float bonoEsperado = 293.0f;
-		assertEquals(bonoEsperado,bonoActual);
+		Employee  e = new Employee(100f, "USD", 1f, EmployeeType.Manager);
+		float bonoActual = e.CalculateYearBonus();
+		float bonoEsperado = 486.0f;
+		assertEquals(bonoActual, bonoEsperado, 0.1);
 	 }
 	 
 	 
 	 /*
-	 * 8. Calcula el bono de fin de a�o de un Employee Supervisor 
+	 * 8. Calcula el bono de fin de anio de un Employee Supervisor 
 	 * cuando la moneda es USD
 	 */
 	 @Test
 	 public void CalculateYearBonusSupevisorUSDTest() {
-		  Employee e2 = new Employee(100f, "USD", 1f, EmployeeType.Supervisor);
+		  Employee e = new Employee(100f, "USD", 1f, EmployeeType.Supervisor);
 		  float bonoEsperado = 293.0f;
-		  float bonoActual = e2.CalculateYearBonus();
-		  assertEquals(bonoEsperado, bonoActual);
+		  float bonoActual = e.CalculateYearBonus();
+		  assertEquals(bonoActual, bonoEsperado, 0.1);
 	 }
 	 
 	 /*
-	 * 9. Calcula el bono de fin de a�o de un Employee Worker 
+	 * 9. Calcula el bono de fin de anio de un Employee Worker 
 	 * cuando la moneda NO es USD
 	 */
 	 @Test
 	 public void CalculateYearBonusWorkerEURTest() {
+		 Employee e = new Employee(100f, "EUR", 1f, EmployeeType.Worker);
 		 float bonoEsperado = 386f;
-		 Employee e6 = new Employee(100f, "EUR", 1f, EmployeeType.Worker);
-		 float bonoActual = e6.CalculateYearBonus();
-		 assertEquals(bonoEsperado, bonoActual);
+		 float bonoActual = e.CalculateYearBonus();
+		 assertEquals(bonoActual,bonoEsperado, 0.1);
 
 	 }
-	  /**
-     * Test que prueba que el metodo CalculateYearBonus calcule de forma
-     * correcta el bono de fin de año de un empleado Supervisor que tenga como
-     * salario 100 Euros y 1 de bonusPercentaje
-     */
+	 
+	/*
+	* Test que prueba que el metodo CalculateYearBonus calcule de forma
+	* correcta el bono de fin de año de un empleado Supervisor que tenga como
+	* salario 100 Euros y 1 de bonusPercentaje
+	*/
     @Test
     public void CalculateYearBonusTest5() {
+    	Employee  e = new Employee(100f, "EUR", 1f, EmployeeType.Supervisor);
     	float bonoEsperado = 288.0f;
-		Employee  e5 = new Employee(100f, "EUR", 1f, EmployeeType.Supervisor);
-		float bonoActual = e5.CalculateYearBonus();
-		assertEquals(bonoEsperado, bonoActual);
+		float bonoActual = e.CalculateYearBonus();
+		assertEquals( bonoActual, bonoEsperado, 0.1);
     }
 	
 
