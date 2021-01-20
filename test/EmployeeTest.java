@@ -82,12 +82,17 @@ class EmployeeTest {
 	 
 	 
 	 /*
-	 * 6. Calcula el bono de fin de a�o de un Employee Worker 
+	 * 6. Calcula el bono de fin de anio de un Employee Worker 
 	 * cuando la moneda es USD
 	 */
 	 @Test
 	 public void CalculateYearBonusWorkerUSDTest() {
+		 Employee  e7 = new Employee(100f, "USD", 1f, EmployeeType.Worker);
+		 float bonoActual = e7.CalculateYearBonus();
+		 float bonoEsperado = 386.0f;
+		 assertEquals(bonoEsperado,bonoActual);
 		 
+
 	 }
 	 
 	 /*
@@ -97,7 +102,9 @@ class EmployeeTest {
 	 @Test
 	 public void CalculateYearBonusManagerUSDTest() {
 		Employee  e1 = new Employee(100f, "USD", 1f, EmployeeType.Manager);
-		//Assert.assertEquals(293.0f, e1.CalculateYearBonus());
+		float bonoActual = e1.CalculateYearBonus();
+		float bonoEsperado = 293.0f;
+		assertEquals(bonoEsperado,bonoActual);
 	 }
 	 
 	 
@@ -108,7 +115,9 @@ class EmployeeTest {
 	 @Test
 	 public void CalculateYearBonusSupevisorUSDTest() {
 		  Employee e2 = new Employee(100f, "USD", 1f, EmployeeType.Supervisor);
-		  //Assert.assertEquals(293.0f, e2.CalculateYearBonus());
+		  float bonoEsperado = 293.0f;
+		  float bonoActual = e2.CalculateYearBonus();
+		  assertEquals(bonoEsperado, bonoActual);
 	 }
 	 
 	 /*
@@ -117,8 +126,10 @@ class EmployeeTest {
 	 */
 	 @Test
 	 public void CalculateYearBonusWorkerEURTest() {
+		 float bonoEsperado = 386f;
 		 Employee e6 = new Employee(100f, "EUR", 1f, EmployeeType.Worker);
-		 //Assert.assertEquals(386f, e6.CalculateYearBonus());
+		 float bonoActual = e6.CalculateYearBonus();
+		 assertEquals(bonoEsperado, bonoActual);
 
 	 }
 	  /**
@@ -128,8 +139,10 @@ class EmployeeTest {
      */
     @Test
     public void CalculateYearBonusTest5() {
+    	float bonoEsperado = 288.0f;
 		Employee  e5 = new Employee(100f, "EUR", 1f, EmployeeType.Supervisor);
-        //Assert.assertEquals(288.0f, e5.CalculateYearBonus());
+		float bonoActual = e5.CalculateYearBonus();
+		assertEquals(bonoEsperado, bonoActual);
     }
 	
 
