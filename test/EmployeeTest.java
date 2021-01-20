@@ -78,7 +78,7 @@ class EmployeeTest {
 	 
 	 
 	 /*
-	 * 6. Calcula el bono de fin de año de un Employee Worker 
+	 * 6. Calcula el bono de fin de aï¿½o de un Employee Worker 
 	 * cuando la moneda es USD
 	 */
 	 @Test
@@ -87,17 +87,17 @@ class EmployeeTest {
 	 }
 	 
 	 /*
-	 * 7. Calcula el bono de fin de año de un Employee Manager 
+	 * 7. Calcula el bono de fin de aÃ±o de un Employee Manager 
 	 * cuando la moneda es USD
 	 */
 	 @Test
 	 public void CalculateYearBonusManagerUSDTest() {
-		 
+		  Assert.assertEquals(293.0f, e2.CalculateYearBonus());
 	 }
 	 
 	 
 	 /*
-	 * 8. Calcula el bono de fin de año de un Employee Supervisor 
+	 * 8. Calcula el bono de fin de aï¿½o de un Employee Supervisor 
 	 * cuando la moneda es USD
 	 */
 	 @Test
@@ -106,7 +106,7 @@ class EmployeeTest {
 	 }
 	 
 	 /*
-	 * 9. Calcula el bono de fin de año de un Employee Worker 
+	 * 9. Calcula el bono de fin de aï¿½o de un Employee Worker 
 	 * cuando la moneda NO es USD
 	 */
 	 @Test
