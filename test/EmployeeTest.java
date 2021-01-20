@@ -13,17 +13,6 @@ import tallerpruebas.Employee;
 import tallerpruebas.EmployeeType;
 
 class EmployeeTest {
-	Employee e1, e2, e3, e4, e5, e6;
-	
-	 public EmployeeTest() {
-		e1 = new Employee(100f, "USD", 1f, EmployeeType.Worker);
-	    e1 = new Employee(100f, "USD", 1f, EmployeeType.Manager);
-	    e2 = new Employee(100f, "USD", 1f, EmployeeType.Supervisor);
-	    e4 = new Employee(100f, "EUR", 1f, EmployeeType.Manager);
-	    e5 = new Employee(100f, "EUR", 1f, EmployeeType.Supervisor);
-	
-	    int numMes = new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate().getMonthValue();
-	}
 	
 	/*
 	 * 1. Calcula el salario de un Employee Worker cuando la moneda 
@@ -31,7 +20,7 @@ class EmployeeTest {
 	 */
 	 @Test
 	 public void csWorkerUSDParTest() {
-		 // Employee e3 = new Employee(100f, "USD", 1f, EmployeeType.Worker);
+		 Employee e1 = new Employee(100f, "USD", 1f, EmployeeType.Worker);
 		 float salarioactual = e1.cs();
 		 float salarioEsperado = 164.33334350585938f;
 		 assertEquals(salarioactual, salarioEsperado, 0.1);
@@ -43,7 +32,10 @@ class EmployeeTest {
 	 */
 	 @Test
 	 public void csManagerUSDParTest() {
-		 
+		 Employee e2 = new Employee(100f, "USD", 1f, EmployeeType.Manager);
+		 float salarioactual = e2.cs();
+		 float salarioEsperado = 165.033325f;
+		 assertEquals(salarioactual, salarioEsperado, 0.1);
 	 }
 	 
 	 
@@ -53,6 +45,10 @@ class EmployeeTest {
 	 */
 	 @Test
 	 public void csSupervisorUSDParTest() {
+		 Employee e3 = new Employee(100f, "USD", 1f, EmployeeType.Supervisor);
+		 float salarioactual = e3.cs();
+		 float salarioEsperado = 164.6833f;
+		 assertEquals(salarioactual, salarioEsperado, 0.1);
 		 
 	 }
 	 
@@ -92,7 +88,7 @@ class EmployeeTest {
 	 */
 	 @Test
 	 public void CalculateYearBonusManagerUSDTest() {
-		  Assert.assertEquals(293.0f, e2.CalculateYearBonus());
+		//  Assert.assertEquals(293.0f, e2.CalculateYearBonus());
 	 }
 	 
 	 
