@@ -92,7 +92,8 @@ class EmployeeTest {
 	 */
 	 @Test
 	 public void CalculateYearBonusManagerUSDTest() {
-		  Assert.assertEquals(293.0f, e2.CalculateYearBonus());
+		Employee  e1 = new Employee(100f, "USD", 1f, EmployeeType.Manager);
+		Assert.assertEquals(293.0f, e1.CalculateYearBonus());
 	 }
 	 
 	 
@@ -102,7 +103,8 @@ class EmployeeTest {
 	 */
 	 @Test
 	 public void CalculateYearBonusSupevisorUSDTest() {
-		 
+		  Employee e2 = new Employee(100f, "USD", 1f, EmployeeType.Supervisor);
+		  Assert.assertEquals(293.0f, e2.CalculateYearBonus());
 	 }
 	 
 	 /*
@@ -111,8 +113,19 @@ class EmployeeTest {
 	 */
 	 @Test
 	 public void CalculateYearBonusWorkerEURTest() {
-		 
+		 Employee e6 = new Employee(100f, "EUR", 1f, EmployeeType.Worker);
+		 Assert.assertEquals(386f, e6.CalculateYearBonus());
+
 	 }
+	  /**
+     * Test que prueba que el metodo CalculateYearBonus calcule de forma
+     * correcta el bono de fin de año de un empleado Supervisor que tenga como
+     * salario 100 Euros y 1 de bonusPercentaje
+     */
+    @Test
+    public void CalculateYearBonusTest5() {
+        Assert.assertEquals(288.0f, e5.CalculateYearBonus());
+    }
 	
 
 }
